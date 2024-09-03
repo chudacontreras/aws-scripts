@@ -75,8 +75,8 @@ def is_user_assigned_to_permission_set(account_id, user_id, permission_set_arn):
 
 
 # Configurar los parámetros iniciales
-identity_store_id = 'tu_identity_store_id'  # Reemplaza con tu Identity Store ID
-sso_instance_arn = 'arn:aws:sso:::instance/ssoins-xxxxxxxxxxxx'  # Reemplaza con tu ARN de la instancia de SSO
+identity_store_id = 'd-90677080dc'  # Reemplaza con tu Identity Store ID
+sso_instance_arn = 'arn:aws:sso:::instance/ssoins-72238a94f995b195'  # Reemplaza con tu ARN de la instancia de SSO
 
 # Obtener todos los usuarios
 users = get_users(identity_store_id)
@@ -104,7 +104,7 @@ with open('identity_center_data.csv', mode='w', newline='') as file:
         account_names = []
 
         for permission_set_arn in all_permission_sets:
-            if is_user_assigned_to_permission_set(account_id='tu_account_id', user_id=user_id,
+            if is_user_assigned_to_permission_set(account_id='285026024173', user_id=user_id,
                                                   permission_set_arn=permission_set_arn):
                 permission_set_arns.append(permission_set_arn)
                 permission_set_names.append(get_permission_set_name(permission_set_arn))
